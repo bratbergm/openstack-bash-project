@@ -13,7 +13,7 @@ export class LoginELement extends LitElement {
   // Constructor with initialization of the property
   constructor() {
     super();
-    this.message = 'TEST '; // Skal det stå noe her? Siden feiler hvis ikke
+    this.message = ' '; // Skal det stå noe her? Siden feiler hvis ikke
     this.email = '';
     this.password = '';
   }
@@ -37,7 +37,7 @@ export class LoginELement extends LitElement {
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
       overflow: hidden;
-      width: 400px;
+      width: 450px;
       max-width: 100%;
       max-height: 100%;
     }
@@ -105,6 +105,7 @@ export class LoginELement extends LitElement {
             <a class="navbar-brand" href="/">Forum</a>
             <a class="navbar-brand" href="/login">Login</a>
             <a class="navbar-brand" href="/registerUser">Register</a>
+            <a class="navbar-brand" href="/getUsers">Users</a>
         </nav>
 
         <div class="outer-container d-flex flex-row">

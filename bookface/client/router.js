@@ -4,6 +4,7 @@ import './src/ap-element.js';
 import './src/register-element.js';
 import './src/login-element.js';
 import './src/post-element.js';
+import './src/users-element.js';
 
 const router = new Router(document.getElementById('outlet'));
 router.setRoutes([
@@ -12,4 +13,5 @@ router.setRoutes([
   { path: '/login', component: 'login-element' },
   { path: '/post', component: 'post-element' },
   { path: '/addPost', component: 'ap-element' },
+  { path: '/getUsers', component: 'user-element' }
 ]);

@@ -82,6 +82,7 @@ export class postelement extends LitElement {
           <a class="navbar-brand" href="/">Forum</a>
           <a class="navbar-brand" href="/login">Login</a>
           <a class="navbar-brand" href="/registerUser">Register</a>
+          <a class="navbar-brand" href="/getUsers">Users</a>
         </nav>
 
         <div style="display: block">

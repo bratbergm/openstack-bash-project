@@ -14,7 +14,7 @@ export class RegisterELement extends LitElement {
   // Constructor with initialization of the property
   constructor() {
     super();
-    this.message = '(message test)';
+    this.message = ' ';
     this.email = '';
     this.password = '';
   }
@@ -38,7 +38,7 @@ export class RegisterELement extends LitElement {
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
       overflow: hidden;
-      width: 500px;
+      width: 550px;
       max-width: 100%;
       max-height: 100%;
     }
@@ -115,6 +115,7 @@ export class RegisterELement extends LitElement {
           <a class="navbar-brand" href="/">Forum</a>
           <a class="navbar-brand" href="/login">Login</a>
           <a class="navbar-brand" href="/registerUser">Register</a>
+          <a class="navbar-brand" href="/getUsers">Users</a>
         </nav>
 
         <div class="outer-container">

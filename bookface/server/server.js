@@ -21,7 +21,7 @@ var db = mysql.createConnection({
   host: 'db',
   user: 'admin',
   password: 'password',
-  database: 'prog2053-proj',
+  database: 'bookface',
 });
 
 db.connect(function (err) {
@@ -155,7 +155,7 @@ app.post('/addPost', function (req, res) {
 
 app.get('/getPosts', function (req, res) {
   db.query(
-    'SELECT p.pid AS postId, u.uid AS userId, title, content, userType, email, picture AS avatar FROM posts p INNER JOIN users u ON u.uid = p.user',
+    'SELECT p.pid AS postId, u.uid AS userId, title, content, email, picture AS avatar FROM posts p INNER JOIN users u ON u.uid = p.user',
     function (err, result) {
       if (err) {
         console.log(err);
@@ -173,8 +173,8 @@ app.get('/getUsers', function (req, res) {
     if (err) {
       res.status(400).send('Error in database operation.');
     } else {
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify(result));
+   //   res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.send(JSON.stringify(result));
       //console.log("Result: " + res);
     }
   });
