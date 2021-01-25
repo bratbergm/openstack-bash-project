@@ -1,0 +1,43 @@
+{
+  "name": "bookface",
+  "version": "1.0.0",
+  "description": "bookface",
+  "author": "Author Name <authorname@example.com>",
+  "license": "ISC",
+  "main": "index.html",
+  "scripts": {
+    "copyindex": "cp src/index.html build",
+    "copywc": "cp -r node_modules/@webcomponents/webcomponentsjs/bundles build && cp node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js build",
+    "build": "rm -rf build && mkdir build && npm run copyindex && npm run copywc && rollup -c",
+    "start": "serve build",
+    "serve": "es-dev-server --app-index index.html --node-resolve --watch --open --port 8080 --host 0.0.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-proposal-decorators": "^7.2.3",
+    "@rollup/plugin-babel": "^5.2.1",
+    "es-dev-server": "^1.57.4",
+    "rollup": "^1.1.0",
+    "serve": "^11.3.2"
+  },
+  "devServer": {
+    "host": "0.0.0.0",
+    "port": "8080"
+  },
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.4.4",
+    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "lit-element": "^2.4.0",
+    "lit-element-router": "^2.0.3",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.6",
+    "require": "^2.4.20"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.1.3"
+  }
+}

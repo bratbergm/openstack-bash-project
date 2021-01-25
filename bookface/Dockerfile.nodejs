@@ -1,0 +1,18 @@
+FROM node:14-alpine
+
+RUN apk update && \
+    apk add git
+
+EXPOSE 8081
+
+RUN mkdir -p /server
+
+WORKDIR /server
+
+COPY ./server/package.json ./
+
+RUN npm cache clean --force && \
+    npm i -g nodemon && \
+    npm install
+
+ENTRYPOINT ["nodemon", "server.js", "-L"]
