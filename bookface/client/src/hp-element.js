@@ -25,7 +25,7 @@ export class hpelement extends LitElement {
     }
 
     .container-outer {
-      background-color: rgb(194, 25, 25);
+      background-color: #b4b4b4;
     }
 
     .form-group {
@@ -33,7 +33,9 @@ export class hpelement extends LitElement {
       display: flex;
       align-items: center;
       justify-content: center;
+      background-color: #ffffff;
     }
+
 
     .button {
       background-color: #008cba;
@@ -72,22 +74,24 @@ export class hpelement extends LitElement {
           <a class="navbar-brand" href="/getUsers">Users</a>
         </nav>
 
-        <div class="form-group">
-            <h1>BookFace</h1>
-            <h6>By CyberSec4U</h6>
-        </div>
+        <div class="container-outer">
+          <div class="form-group">
+              <h1>BookFace</h1>
+              <h6>By CyberSec4U</h6>
+          </div>
 
-        <div style="display: block">
-          ${this.posts.map((post) => {
-            return this.renderPost(post);
-          })}
-        </div>
+          <div style="display: block">
+            ${this.posts.map((post) => {
+              return this.renderPost(post);
+            })}
+          </div>
 
-        <div class="form-group">
-            <a class="button" href="/login">Login</a>
-            <a class="button" href="/addPost">Add posts</a>
+          <div class="form-group">
+              <a class="button" href="/login">Login</a>
+              <a class="button" href="/addPost">Add posts</a>
+          </div>
+          
         </div>
-         
 
         <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
         <script
@@ -112,10 +116,10 @@ export class hpelement extends LitElement {
 
     return html`<div
       key="${postId}"
-      style="border-bottom: 1px solid #eee; padding: 15px"
+      style="border-bottom: 10px solid #eee; padding: 15px"
     >
       <div style="display: table-cell; vertical-align: top">
-        <div style="display: block; min-width: 100px">
+        <div style="display: block; min-width: 300px">
           <img
             src=${avatar}
             alt="Avatar"
@@ -123,7 +127,7 @@ export class hpelement extends LitElement {
           />
           <p>${userType} #${userId}</p>
           <p
-            style="max-width: 100px; overflow: hidden; text-overflow: ellipsis"
+            style="max-width: 250px; overflow: hidden; text-overflow: ellipsis"
           >
             ${email}
           </p>

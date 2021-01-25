@@ -24,7 +24,7 @@ export class LoginELement extends LitElement {
     }
 
     .outer-container {
-      background-color: #9e83aa;
+      background-color: #4E5166;
       display: flex;
       align-items: center;
       justify-content: center;

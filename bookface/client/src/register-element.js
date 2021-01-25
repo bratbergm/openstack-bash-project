@@ -25,7 +25,7 @@ export class RegisterELement extends LitElement {
     }
 
     .outer-container {
-      background-color: #9e83aa;
+      background-color: #4E5166;  /* #9e83aa */
       display: flex;
       align-items: center;
       justify-content: center;
