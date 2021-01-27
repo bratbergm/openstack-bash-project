@@ -23,7 +23,7 @@ openstack server list # / nova list
 
 **MySQL**
 
-```mysql
+```bash
 # Install
 apt-get update
 #
