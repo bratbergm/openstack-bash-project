@@ -21,6 +21,56 @@ openstack server list # / nova list
 
 ```
 
+**Webserver Config**
+
+```bash
+apt-get update
+apt-get install apache2 libapache2-mod-php
+```
+
+**haproxy**
+
+```bash
+apt-get update
+apt-get install haproxy net-tools
+# Config fil
+nano /etc/haproxy/haproxy.cfg
+```
+
+*Legg til vår config:*
+
+```bash
+  frontend main
+bind *:80
+mode http
+default_backend webservers
+
+backend webservers
+balance roundrobin
+server www1 192.168.131.120
+server www2 192.168.129.242
+
+listen stats
+bind *:1936
+stats enable
+stats uri /
+stats hide-version
+stats auth someuser:password
+```
+
+```bash
+# Sjekk syntax
+haproxy -c -f /etc/haproxy/haproxy.cfg
+# Start
+service haproxy start
+# Sjekk porter
+netstat -anltp
+# Restart ved endringer
+service haproxy restart
+```
+
+
+
 
 
 **Docker**
