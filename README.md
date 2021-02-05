@@ -139,6 +139,7 @@ apt-get install apache2  #ex
 docker commit -m="A webserver image" <id|name> webserver
 # Check existence
 docker images
+#
 ```
 
 *Using a docker file*
@@ -160,6 +161,7 @@ Dockerfile ex:
 # verison 0.1
 FROM ubuntu:20.04
 MAINTAINER ... ...
+ENV DEBIAN_FRONTEND=noninteractive   # NB: hvis nyere ubuntu versjon
 RUN apt-get update
 RUN apt-get -y install apache2
 RUN echo "Hello world" > /var/www/html/index.html
