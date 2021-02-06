@@ -175,7 +175,7 @@ docker build -t "webserver:v1" .
 # Check existence
 docker images
 # Run, auto start at host boot
-docker run --restart=unless-stopped -P -d webserver:v1 /usr/sbin/apache2ctl -D FOREGROUND
+docker run --restart=unless-stopped --name=<NAVN> -P -d webserver:v1 /usr/sbin/apache2ctl -D FOREGROUND
 ```
 
 Test
