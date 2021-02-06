@@ -1,0 +1,43 @@
+version: '3.4'
+
+configs:
+  bf_config:
+    file: ./config.php
+
+networks:
+  webnet:
+    external:
+      name: roach_cockroachdb
+
+volumes:
+  bf_images:
+    driver: gluster
+    name: "images"
+    
+
+services:
+  web:
+    image: dock01:5000/bf:v4
+
+    configs:
+      - source: bf_config
+        target: /var/www/html/config.php
+    ports:
+      - "80"
+    networks:
+        - webnet
+
+    environment:
+      BF_MEMCACHE_SERVER: memcache
+      BF_FRONTPAGE_LIMIT: 10
+    volumes:
+      - bf_images:/var/www/html/images
+    
+    deploy:
+      replicas: 1
+
+  memcache:
+    image: memcached
+
+    networks:
+      - webnet
