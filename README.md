@@ -189,15 +189,22 @@ wget -O - -q http://<ip:port>
 
 
 
-*Docker and git*
+**Docker and git**
 
 - Can build images based on folders in a git repository
 
 ```bash
-docker build -t "apachephp:v1" <docker-git-repo>
+docker build -t "webserver:v1" <docker-git-repo>
 ```
 
-
+```bash
+# image:
+# https://gitlab.com/morterb/bookface2
+# Build from repository
+docker build -t "webserver:v1" git@gitlab.com:morterb/bookface2.git
+# Run
+docker run --restart=unless-stopped --name=webserver -P -d webserver:v1 /usr/sbin/apache2ctl -D FOREGROUND
+```
 
 *Build features*
 
