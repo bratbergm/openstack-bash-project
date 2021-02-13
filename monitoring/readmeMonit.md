@@ -13,12 +13,12 @@
 På klienter
 
 ```bash
-# Finn siste versjon:
-https://prometheus.io/download/#node_exporter
-wget (...)
-tar xvfz node_exporter (...)
-cd node_exporter (...)
-./node_exporter&	# (&: kjør i bakgrunn)
+# (Finn siste versjon: https://prometheus.io/download/#node_exporter)
+wget https://github.com/prometheus/node_exporter/releases/download/v1.1.0/node_exporter-1.1.0.linux-amd64.tar.gz
+tar xvfz node_exporter-1.1.0.linux-amd64.tar.gz
+cd node_exporter-1.1.0.linux-amd64
+./node_exporter&
+# (&: kjør i bakgrunn)
 # Sjekk om fungerer:
 http://localhost:9100/metrics
 # Firewall: allow port 9100
