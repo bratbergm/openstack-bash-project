@@ -12,9 +12,13 @@ openstack flavor list
 openstack image list
 #
 # Create server
-openstack server create --flavor m1.tiny --image d60a5c81-2657-4d21-921b-1ea29a6e8d58 --key-name Manager
---user-data /home/ubuntu/git/DCSG2003/scripts/apacheInstall.sh --security-group default
-  INSTANCE_NAME
+openstack server create \
+--flavor m1.small \
+--image d60a5c81-2657-4d21-921b-1ea29a6e8d58 \
+--key-name Manager \
+--security-group default \
+--user-data /home/ubuntu/git/DCSG2003/scripts/ubuntudocker.sh \
+test
   
 # Check if the instance is online
 openstack server list
