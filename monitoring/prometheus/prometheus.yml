@@ -21,8 +21,8 @@ scrape_configs:
   - job_name: 'nodeexporter'  # Metrics fra maskiner
     scrape_interval: 5s
     static_configs:
-      - targets: ['192.168.131.230:9100', '192.168.130.230:9100', '192.168.132.214:9100']  
-# www3: 192.168.131.230, Balancer: 192.168.130.230, db1: 192.168.132.214 
+      - targets: ['192.168.128.89:9100', '192.168.130.230:9100', '192.168.130.63:9100']  
+# www3.1: 192.168.128.89, Balancer: 192.168.130.230, db2: 192.168.130.63 
 
   - job_name: 'cadvisor'      # Metrics fra containere
     scrape_interval: 5s
