@@ -14,7 +14,7 @@ openstack image list
 # Create server
 openstack server create \
 --flavor m1.small \
---image d60a5c81-2657-4d21-921b-1ea29a6e8d58 \
+--image 1676adb4-9657-42ed-b31f-b3907cbcd697 \   
 --key-name Manager \
 --security-group default \
 --user-data /home/ubuntu/git/DCSG2003/scripts/ubuntudocker.sh \
