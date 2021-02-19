@@ -17,8 +17,8 @@ openstack server create \
 --image 1676adb4-9657-42ed-b31f-b3907cbcd697 \   
 --key-name Manager \
 --security-group default \
---user-data /home/ubuntu/git/DCSG2003/scripts/ubuntudocker.sh \
-test
+--user-data /home/ubuntu/git/DCSG2003/scripts/user-data.sh \
+NAME
   
 # Check if the instance is online
 openstack server list
