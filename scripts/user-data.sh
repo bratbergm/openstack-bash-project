@@ -34,3 +34,11 @@ sleep 1
 sudo groupadd docker 
 sudo gpasswd -a $USER docker 
 sudo service docker restart
+
+sleep 1
+
+sudo reboot
+
+final_message: "Ferdig!!"
+echo "Ferdig"
+
