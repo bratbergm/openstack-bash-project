@@ -1,3 +1,7 @@
+# Get vm names and IP
 openstack server list | awk '{print $4 $8}' | sed 's/Name//'| sed 's/Networks//' |sed 's/imt3003=/ /' | sed 's/,//'
 
 for server in $(openstack server list | awk '{print $4 $8}' | sed 's/Name//'| sed 's/Networks//' |sed 's/imt3003=/ /' | sed 's/,//' | sed 's/192.168.132.70//' | awk '{print $2}'); do ssh $server uptime; done
+
+# Get docker names and portnumber
+sudo docker ps | awk '{print $12 $11}' | sed 's/0.0.0.0:/ /' | sed 's/->80\/tcp//' | sed 's/memcache//'
