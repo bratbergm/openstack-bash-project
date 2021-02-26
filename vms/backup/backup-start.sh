@@ -3,5 +3,5 @@ openstack server create \
 --image 1676adb4-9657-42ed-b31f-b3907cbcd697 \
 --key-name Manager \
 --security-group default \
---user-data /home/ubuntu/git/DCSG2003/vms/offline/offline-data.sh \
-Offline
+--user-data /home/ubuntu/git/DCSG2003/vms/backup/backup-data.sh \
+Backup
