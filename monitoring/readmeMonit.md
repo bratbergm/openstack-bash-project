@@ -12,7 +12,7 @@ TL;DR
 
 Overvåkning av infrastrukteren (CPU-, minne- bruk, nettverkstrafikk), databesen (opp/ned) og bookface nettsiden (opp/ned), med varsling til Discord. 
 
-![image-20210301204124667](C:\Users\korg\AppData\Roaming\Typora\typora-user-images\image-20210301204124667.png)
+<img src="C:\Users\korg\AppData\Roaming\Typora\typora-user-images\image-20210301204124667.png" alt="image-20210301204124667" style="zoom:25%;" />
 
 **Prometheus** 
 
