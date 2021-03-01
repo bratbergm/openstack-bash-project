@@ -4,34 +4,16 @@
 
 **Content**
 
-- vms
+- vms:	Directory for each type of vm, with the files
 
-  Directory for each type of vm, with the files
+  - *name*.start.sh	- OpenStack server start script
 
-  - <name>.start.sh
+  - *name*.data.sh     - user-data, startup script
+- monitoring:                - [Se egen Readme](https://gitlab.com/morterb/DCSG2003/-/blob/master/monitoring/readmeMonit.md)
+- scripts                          - misc scipts
+- bookface                     - Webpage code
 
-    OpenStack server start script
-
-  - <name>.data.sh
-
-    user-data, startup script
-
-- monitoring
-
-  - Se egen readme (link)
-
-- scripts
-
-  - misc scipts
-
-- bookface
-
-  - Webpage code
-
-- Container Registry
-
-  - Docker Containers
-
+- Container Registry    - Docker Containers
 
 
 
