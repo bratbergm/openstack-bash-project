@@ -2,90 +2,43 @@
 
 
 
+**Content**
 
+- vms
 
-**OpenStack**
+  Directory for each type of vm, with the files
 
-```bash
-# List parameters
-openstack flavor list
-openstack image list
-#
-# Create server
-openstack server create \
---flavor m1.small \
---image 1676adb4-9657-42ed-b31f-b3907cbcd697 \   
---key-name Manager \
---security-group default \
---user-data /home/ubuntu/git/DCSG2003/scripts/user-data.sh \
-NAME
-  
-# Check if the instance is online
-openstack server list
-```
+  - <name>.start.sh
 
-**Webserver Config**
+    OpenStack server start script
 
-```bash
-apt-get update
-apt-get install apache2 libapache2-mod-php
-```
+  - <name>.data.sh
 
-**haproxy**
+    user-data, startup script
 
-```bash
-apt-get update
-apt-get install haproxy net-tools
-# Config fil
-nano /etc/haproxy/haproxy.cfg
-```
+- monitoring
 
-*Legg til vår config:*
+  - Se egen readme (link)
 
-```bash
-  frontend main
-bind *:80
-mode http
-default_backend webservers
+- scripts
 
-backend webservers
-balance roundrobin
-server www1 192.168.131.120
-server www2 192.168.129.242
+  - misc scipts
 
-listen stats
-bind *:1936
-stats enable
-stats uri /
-stats hide-version
-stats auth someuser:password
-```
+- bookface
 
-```bash
-# Sjekk syntax
-haproxy -c -f /etc/haproxy/haproxy.cfg
-# Start
-service haproxy start
-# Sjekk porter
-netstat -anltp
-# Restart ved endringer
-service haproxy restart
-```
+  - Webpage code
+
+- Container Registry
+
+  - Docker Containers
 
 
 
-**cockroach DB**
-
-```bash
-# Kommandolije i databasen:
-cockroach sql \
---insecure \
---user=root \
---host=192.168.132.214 \ # eller localhost
---database=bf
-```
 
 
+
+
+**Theory**
 
 **Docker**
 

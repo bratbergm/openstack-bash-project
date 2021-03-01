@@ -66,6 +66,17 @@ docker exec -it roach1 ./cockroach init --insecure
 docker exec -it roach1 ./cockroach sql --insecure
 ```
 
+```bash
+# Kommandolije i databasen:
+cockroach sql \
+--insecure \
+--user=root \
+--host=localhost \
+--database=bf
+```
+
+
+
 *Create database with tables*
 
 ```sql
