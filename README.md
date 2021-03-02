@@ -10,8 +10,6 @@
   - *name*.data.sh     - user-data, startup script
 - **monitoring**:                - [Se egen Readme](https://gitlab.com/morterb/DCSG2003/-/blob/master/monitoring/readmeMonit.md)
 - **scripts**                          - misc scipts
-- **bookface**                     - Webpage code
-
 - **Container Registry**    - Docker Containers
 
 
