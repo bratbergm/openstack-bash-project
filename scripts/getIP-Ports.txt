@@ -5,3 +5,8 @@ for server in $(openstack server list | awk '{print $4 $8}' | sed 's/Name//'| se
 
 # Get docker names and portnumber
 sudo docker ps | awk '{print $12 $11}' | sed 's/0.0.0.0:/ /' | sed 's/->80\/tcp//' | sed 's/memcache//'
+
+
+# Forsøk på create alias
+
+openstack server list | awk '{print $3 $4 $8}' | sed 's/Name//'| sed 's/Networks//' | sed 's/|/alias /' | sed "s/imt3003=/='ssh ubuntu@/" | sed 's/,//'
