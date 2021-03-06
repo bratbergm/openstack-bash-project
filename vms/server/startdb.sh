@@ -32,6 +32,12 @@ server3=$(openstack server list \
         | sed 's/imt3003=//' \
         | sed 's/,//')
 
+# Sjekk om serverene er oppe
+ssh $server1 date
+ssh $server2 date
+ssh $server3 date
+
+
 
 # Kjør cockroach start på hver av serverne
 
@@ -40,27 +46,31 @@ ssh $server1 \
 	sudo cockroach start --insecure --store=/bfdata --listen-addr=0.0.0.0:26257 \
 	--http-addr=0.0.0.0:8080 --background \
 	--join=$server1:26257,$server2:26257,$server3:26257 \
-	--advertise-addr=$server1:26257 --max-offset=1500ms 2>/dev/null
+	--advertise-addr=$server1:26257 --max-offset=1500ms
 
-echo "Server1 ($server1) OK!"
+
+sleep 1
 
 # Server 2
 ssh $server2 \
 	sudo cockroach start --insecure --store=/bfdata --listen-addr=0.0.0.0:26257 \
 	--http-addr=0.0.0.0:8080 --background \
 	--join=$server1:26257,$server2:26257,$server3:26257 \
-	--advertise-addr=$server2:26257 --max-offset=1500ms 2>/dev/null
+	--advertise-addr=$server2:26257 --max-offset=1500ms
 
-echo "Server2 ($server2) OK!"
+
+sleep 1
 
 # Server 3
-ssh $server3 sudo cockroach start --insecure --store=/bfdata --listen-addr=0.0.0.0:26257 --http-addr=0.0.0.0:8080 --background --join=$server1:26257,$server2:26257,$server3:26257 --advertise-addr=$server3:26257 --max-offset=1500ms 2>/dev/null
-echo "Server3 ($server3) OK!"
+ssh $server3 \
+	sudo cockroach start --insecure --store=/bfdata --listen-addr=0.0.0.0:26257 \
+	--http-addr=0.0.0.0:8080 --background \
+	--join=$server1:26257,$server2:26257,$server3:26257 \
+	--advertise-addr=$server3:26257 --max-offset=1500ms
 
+
+sleep 1
 
 # Initialisere databasen
-
 ssh $server1 sudo cockroach init --insecure --host=$server1:26257
-
-
 
