@@ -4,4 +4,4 @@ openstack server create \
 --key-name Manager \
 --security-group default \
 --user-data /home/ubuntu/git/DCSG2003/vms/server/server-data.sh \
-server3
+server1
