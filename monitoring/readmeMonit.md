@@ -14,6 +14,14 @@ Overvåkning av infrastrukteren (CPU-, minne- bruk, nettverkstrafikk), databesen
 
 <img src="C:\Users\korg\AppData\Roaming\Typora\typora-user-images\image-20210301204124667.png" alt="image-20210301204124667" style="zoom:25%;" />
 
+
+
+![](images/grafana.png)
+
+
+
+
+
 **Prometheus** 
 
 Brukes til overvåkning og varsling. Får data fra node exporter, cAdvisor og Blackbox exporter. Prometheus har eget interface med grafer, men i denne koden brukes grafana. Er også en film av Ridley Scott.
