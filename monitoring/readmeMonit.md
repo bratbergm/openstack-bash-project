@@ -10,7 +10,7 @@
 
 TL;DR
 
-Overvåkning av infrastrukteren (CPU-, minne- bruk, nettverkstrafikk), databesen (opp/ned) og bookface nettsiden (opp/ned), med varsling til Discord. 
+Overvåkning av infrastrukteren (CPU-, minne- bruk, nettverkstrafikk), databasen (opp/ned) og bookface nettsiden (opp/ned), med varsling til Discord. 
 
 
 
