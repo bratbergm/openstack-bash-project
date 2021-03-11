@@ -112,7 +112,7 @@ Indikasjon på om databasen er oppe:
 
     I Grafana: 
 
-    Alert rules -> New Channel -> Type: *Discord*, Webook URL: hent fra discord server
+    Alert rules -> New Channel -> Type: *Discord*, Webhook URL: hent fra discord server
 
     Edit en graf -> Alert ->  Sett parametre -> Send to: *Discord* 
 
