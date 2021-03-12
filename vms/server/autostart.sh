@@ -40,7 +40,7 @@ for server in $(openstack server list | awk '{print $4}' | sed '1,3d' | sed '$d'
       openstack server start $server
       echo "Starter $server"
 
-sleep 300
+sleep 200
 
 
 # Finn IP adressen til den aktuelle serveren

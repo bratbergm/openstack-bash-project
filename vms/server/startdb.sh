@@ -72,3 +72,11 @@ sleep 1
 # Initialisere databasen
 ssh $server1 sudo cockroach init --insecure --host=$server1:26257
 
+sleep 1
+
+
+# Opprett datbasen til Bookface
+# db.sql legges til i serverne ved oppstart
+
+ssh $server1 sudo chown ubuntu:ubuntu db.sql; cockroach sql --insecure --database=bf < db.sql
+
