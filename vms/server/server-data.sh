@@ -31,5 +31,7 @@ tar xzf cockroach-v20.2.4.linux-amd64.tgz
 sudo cp cockroach-v20.2.4.linux-amd64/cockroach /usr/local/bin 
 sudo mkdir /bfdata
 
+# GlusterFS install
+
 
 # TO DO: legg til resten av config

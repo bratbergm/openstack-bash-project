@@ -48,7 +48,6 @@ ssh $server1 \
 	--join=$server1:26257,$server2:26257,$server3:26257 \
 	--advertise-addr=$server1:26257 --max-offset=1500ms
 
-
 sleep 1
 
 # Server 2
@@ -57,7 +56,6 @@ ssh $server2 \
 	--http-addr=0.0.0.0:8080 --background \
 	--join=$server1:26257,$server2:26257,$server3:26257 \
 	--advertise-addr=$server2:26257 --max-offset=1500ms
-
 
 sleep 1
 
