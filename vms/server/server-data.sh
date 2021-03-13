@@ -32,11 +32,17 @@ sudo cp cockroach-v20.2.4.linux-amd64/cockroach /usr/local/bin
 sudo mkdir /bfdata
 
 # GlusterFS install
+sudo apt-get -y install glusterfs-server glusterfs-client
+sudo systemctl enable glusterd
+sudo systemctl start glusterd
 
-
+sudo mkdir /bf_brick
+sudo mkdir /config_brick
+sudo mkdir /bf_images
+sudo mkdir /bf_config
 
 # Database sql konfigurasjonsfil
-printf "
+printf ""
 CREATE DATABASE bf;
 CREATE USER bfuser;
 GRANT ALL ON DATABASE bf TO bfuser;
@@ -80,8 +86,8 @@ FAMILY '"primary"' (commentid, userid, postid, text, postdate)
 );
 
 CREATE table config ( key STRING(100), value STRING(500) );
-insert into config ( key, value ) values ( 'migration_key', '$MIGRATION_KEY' );
-" > home/ubuntu/db.sql
+insert into config ( key, value ) values ( 'migration_key', "$MIGRATION_KEY" );
+" > home/ubuntu/db.sql"
 
 
 
