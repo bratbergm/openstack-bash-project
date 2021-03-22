@@ -33,7 +33,7 @@ while ! mount -t glusterfs 192.168.131.26:/bf_config /bf_config; do
 sleep 2
 done
 
-mount -t glusterfs 192.168.131.26:/bf_images /bf_images
+mount -t glusterfs $server1:/bf_images /bf_images
 
 sleep 2
 
