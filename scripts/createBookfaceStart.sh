@@ -29,7 +29,7 @@ server3=$(openstack server list \
 echo "
 #!/bin/bash
 cockroach start --insecure --store=/bfdata --listen-addr=0.0.0.0:26257 --http-addr=0.0.0.0:8080 --background --join=$server1:26257,$server2:26257,$server3:26257 --advertise-addr=serverX:26257 --max-offset=1500ms
-while ! mount -t glusterfs 192.168.131.26:/bf_config /bf_config; do
+while ! mount -t glusterfs $server1:/bf_config /bf_config; do
 sleep 2
 done
 
