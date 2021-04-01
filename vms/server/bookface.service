@@ -1,0 +1,10 @@
+[Unit]
+Description=Bookface script
+
+[Service]
+Type=simple
+KillMode=process
+ExecStart=/root/bookface_start.sh
+
+[Install]
+WantedBy=multi-user.target

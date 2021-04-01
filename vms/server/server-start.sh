@@ -1,7 +1,7 @@
 #! /bin/bash
 
 openstack server create \
---flavor m1.medium \
+--flavor m1.small \
 --image 1676adb4-9657-42ed-b31f-b3907cbcd697 \
 --key-name Manager \
 --security-group default \
@@ -9,7 +9,7 @@ openstack server create \
 server1
 
 openstack server create \
---flavor m1.medium \
+--flavor m1.small \
 --image 1676adb4-9657-42ed-b31f-b3907cbcd697 \
 --key-name Manager \
 --security-group default \
@@ -17,7 +17,7 @@ openstack server create \
 server2
 
 openstack server create \
---flavor m1.medium \
+--flavor m1.small \
 --image 1676adb4-9657-42ed-b31f-b3907cbcd697 \
 --key-name Manager \
 --security-group default \

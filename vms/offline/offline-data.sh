@@ -37,8 +37,12 @@ sleep 1
 
 # Dockerfile
 printf "
-   FROM httpd:2.4
-   COPY ./index.html /usr/local/apache2/htdocs/
+FROM ubuntu:20.04
+MAINTAINER hei ja
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update
+RUN apt-get -y install apache2
+EXPOSE 80
 " > /home/ubuntu/Dockerfile
 
 sleep 1
